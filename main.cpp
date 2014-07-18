@@ -163,24 +163,30 @@ if(!treatmentHeader.isCodification())
         //percorre a arvore decodificando os bytes
         for(int y=0; y<bitVector.getSize();y++)
         {
-            if(node->leaf)
-            {
-                fileObjectOutputDecotification<<node->getElement();
-                node=&rootTreeHuffman;
-            }
 
             //verfica se o arquivo acabou, e se ja chegamos no lixo
-            if(bitVector.getSize()==y+huffDecodification.getTrash() && huffDecodification.IsEnd())
+            if(huffDecodification.getTrash()+y==bitVector.getSize())
             {
                 break;
             }
+
             if(bitVector.bitVectorAt(y)==0)
             {
                 node=node->left;
+                if(node->leaf)
+                {
+                    fileObjectOutputDecotification<<node->getElement();
+                    node=&rootTreeHuffman;
+                }
             }
             if(bitVector.bitVectorAt(y)==1)
             {
                 node=node->right;
+                if(node->leaf)
+                {
+                    fileObjectOutputDecotification<<node->getElement();
+                    node=&rootTreeHuffman;
+                }
             }
         }
         //limpa o bit vector
