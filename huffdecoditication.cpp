@@ -1,5 +1,6 @@
 #include "huffdecoditication.h"
 #include"File.h"
+#include"Cell.h"
 #include<math.h>
 #include<QChar>
 #include<QList>
@@ -104,7 +105,6 @@ bool huffdecoditication::isElement(cell* node,QString HuffmanCodification)
     else
         return false;
 }
-
 char huffdecoditication::getElementTree(cell* node,QString HuffmanCodification)
 {
     char charReturn;
@@ -132,6 +132,8 @@ int huffdecoditication::getSize()
 {
     return this->sizeFile;
 }
+
+
 cell* huffdecoditication::generation(QString Tree)
 {
     cell* Left;
@@ -191,7 +193,6 @@ QString huffdecoditication::TreeHuffmanDecodificationLeft(QString huff)
 
     return TreeHuffmanDecodificationLeft;
 }
-
 QString huffdecoditication::TreeHuffmanDecodificationRight(QString huff)
 {
     QList<char> test;
@@ -258,7 +259,6 @@ QString huffdecoditication::TreeHuffmanDecodificationRight(QString huff)
 
     return TreeHuffmanDecodificationRight;
 }
-
 
 char* huffdecoditication::getFileName()
 {
