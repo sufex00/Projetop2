@@ -47,9 +47,9 @@ char cell::getElement()
     }
 }
 
-void cell::setHuffmanRepresentation(int huffman)
+void cell::setHuffmanRepresentation(long int huffman)
 {
-    sprintf(this->huffmanRepresentation,"%d",huffman);
+    sprintf(this->huffmanRepresentation,"%ld",huffman);
 }
 
 

@@ -136,10 +136,8 @@ if(!treatmentHeader.isCodification())
     QString bucked;
 
     //gera a arvore aparti da representação
-    qDebug()<<"pedro";
     cell rootTreeHuffman=*huffDecodification.generation(huffDecodification.TreeRepresetation());
     cell* node=&rootTreeHuffman;
-    treeHuffman.printTree(&rootTreeHuffman);
     while(!huffDecodification.IsEnd())
     {
         //Pega uma parte do arquivo codificado
@@ -148,7 +146,7 @@ if(!treatmentHeader.isCodification())
         //conta quantos bytes foram decodificados
         sizeTemp+=bucked.size();
         if(int(double(sizeTemp)/huffDecodification.getSize()*100)>int(oldPercentage))
-            qDebug()<<int(oldPercentage)<<"%";
+           qDebug()<<int(oldPercentage)<<"%";
         oldPercentage=double(sizeTemp)/huffDecodification.getSize()*100;
 
         //decodifica a parte que foi pegada do arquivo, e a coloca no bit vector

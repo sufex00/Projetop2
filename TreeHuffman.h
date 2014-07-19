@@ -74,7 +74,7 @@ public:
     QString huffmanRepresentation(int Char);
 
     //Constroi a codificação de huffman
-    void buildCodification(cell *node, int level=1);
+    void buildCodification(cell *node, long int level=1);
 
     //Calcula o lixo
     int trashCalculation(int* frequency);

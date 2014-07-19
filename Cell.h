@@ -45,7 +45,7 @@ public:
     char getElement();
 
     //Retorna elemento que pertence a folha
-    void setHuffmanRepresentation(int huffman);
+    void setHuffmanRepresentation(long int huffman);
 
     //Retorna a representação da codificação de huffman
     QString getHuffmanRepresentation();

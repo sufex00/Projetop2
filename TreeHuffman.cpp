@@ -132,7 +132,7 @@ QString TreeHuffman::huffmanRepresentation(int Char)
     QString huffmanRepresentationArrayReturn=this->huffmanRepresentationArray[Char];
     return huffmanRepresentationArrayReturn;
 }
-void TreeHuffman::buildCodification(cell* node,int level)
+void TreeHuffman::buildCodification(cell* node,long int level)
 {
         if(node->leaf != true)
         {
